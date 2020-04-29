@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-fancy-logger": [
+        "dist/ngx-fancy-logger/ngx-fancy-logger",
+        "dist/ngx-fancy-logger"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
