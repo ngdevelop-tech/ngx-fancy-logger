@@ -11,6 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ngx-fancy-logger:build": "ng build ngx-fancy-logger",
+    "ngx-fancy-logger:build:prod": "ng build ngx-fancy-logger --prod",
     "ngx-fancy-logger:watch":"npm run build:ngx-fancy-logger -- --watch"
   },
   "repository": {
