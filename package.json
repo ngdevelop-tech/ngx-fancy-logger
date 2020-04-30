@@ -12,26 +12,9 @@
     "e2e": "ng e2e",
     "ngx-fancy-logger:build": "ng build ngx-fancy-logger",
     "ngx-fancy-logger:build:prod": "ng build ngx-fancy-logger --prod",
-    "ngx-fancy-logger:watch":"npm run build:ngx-fancy-logger -- --watch"
+    "ngx-fancy-logger:watch":"npm run build:ngx-fancy-logger -- --watch",
+    "ngx-fancy-logger:publish":"npm run ngx-fancy-logger:build:prod && cd dist/ngx-fancy-logger && npm publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ngdevelop-tech/ngx-fancy-logger"
-  },
-  "author": {
-    "name": "Ankit Prajapati",
-    "email": "aprajapati06@gmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ngdevelop-tech/ngx-fancy-logger/issues"
-  },
-  "homepage": "https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/README.md",
-  "keywords": [
-    "angular",
-    "logging",
-    "logger"
-  ],
   "private": false,
   "dependencies": {
     "@angular/animations": "~9.0.6",
