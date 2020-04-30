@@ -1,4 +1,5 @@
 import { Injectable, Optional } from '@angular/core';
+import { isNumber } from 'util';
 
 export enum LogLevel {
   INFO,
@@ -17,25 +18,53 @@ export abstract class AbstractNgxFancyLoggerService {
 export class LoggerConfig {
   showTime ?= true;
   logLevel ?= LogLevel.INFO;
-  levelColor ?: {
+  showEmoji ?= true;
+  showLabel ?= true;
+  levelColor?: {
     [logLevel: number]: string,
-  }  = {};
+  } = {};
+  levelEmogi?: {
+    [logLevel: number]: string
+  } = {};
 }
 
 const DEFAULT_LEVEL_COLORS = {
-  [LogLevel.INFO] : 'steelblue',
-  [LogLevel.DEBUG] : 'black',
-  [LogLevel.WARNING] : 'orange',
+  [LogLevel.INFO]: 'steelblue',
+  [LogLevel.DEBUG]: 'black',
+  [LogLevel.WARNING]: 'orange',
   [LogLevel.ERROR]: 'red'
 };
 
+const DEFAULT_EMOJIS = {
+  [LogLevel.INFO]: '🐬',
+  [LogLevel.DEBUG]: '👨‍💻',
+  [LogLevel.WARNING]: '👨‍🚀',
+  [LogLevel.ERROR]: '😨'
+};
 
 @Injectable()
 export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
   config: LoggerConfig;
   DEFAULT_CONFIG = new LoggerConfig();
+
+  levelPrefix = {};
+
   constructor(@Optional() private loggerConfig: LoggerConfig) {
-    this.config = {...this.DEFAULT_CONFIG, ...loggerConfig};
+    this.config = { ...this.DEFAULT_CONFIG, ...loggerConfig };
+    this.setPrefix();
+  }
+
+  private setPrefix() {
+    for (const key in LogLevel) {
+      if (!isNaN(Number(key))) {
+        let prefix = this.config.showEmoji ? this.config.levelEmogi[key] || DEFAULT_EMOJIS[key] : '';
+        if (this.config.showLabel) {
+          prefix += LogLevel[key];
+        }
+
+        this.levelPrefix[key] = prefix;
+      }
+    }
   }
 
   private showTime = () => {
@@ -60,10 +89,10 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
     this.log(LogLevel.ERROR, 'error', args);
   }
 
-  private log(level: LogLevel, method: string, ...args: any[] ) {
+  private log(level: LogLevel, method: string, ...args: any[]) {
     if (level < this.config.logLevel) {
       return;
     }
-    console[method](`%c${LogLevel[level]}${this.showTime()}`, this.getStyles(level), ...args);
+    console[method](`%c${this.levelPrefix[level]}${this.showTime()}`, this.getStyles(level), ...args);
   }
 }
