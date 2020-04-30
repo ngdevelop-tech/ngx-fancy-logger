@@ -10,9 +10,9 @@ export class AppComponent {
   title = 'demo';
 
   constructor(private logger: NgxFancyLoggerService) {
-    logger.info('INFO Log', 123, { a: 20, b: 30 });
-    logger.debug('Debug Log', { a: 20, b: 30 });
-    logger.warning('Warning Log', { a: 20, b: 30 });
-    logger.error('Error Log', { a: 20, b: 30 });
+    logger.info('This is a INFO log', 123, { a: 20, b: 30 });
+    logger.debug('This is a DEBUG Log', { a: 20, b: 30 });
+    logger.warning('This is a WARNING Log', { a: 20, b: 30 });
+    logger.error('This is an ERROR Log', { a: 20, b: 30 });
   }
 }

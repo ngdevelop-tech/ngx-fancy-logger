@@ -1,6 +1,7 @@
 {
   "name": "ngx-fancy-logger",
   "version": "0.0.0",
+  "description": "Console Logger for Angular applications",
   "scripts": {
     "ng": "ng",
     "start": "ng serve demo",
@@ -9,10 +10,28 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:ngx-fancy-logger": "ng build ngx-fancy-logger",
-    "watch:ngx-fancy-logger":"npm run build:ngx-fancy-logger -- --watch"
+    "ngx-fancy-logger:build": "ng build ngx-fancy-logger",
+    "ngx-fancy-logger:watch":"npm run build:ngx-fancy-logger -- --watch"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngdevelop-tech/ngx-fancy-logger"
+  },
+  "author": {
+    "name": "Ankit Prajapati",
+    "email": "aprajapati06@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ngdevelop-tech/ngx-fancy-logger/issues"
+  },
+  "homepage": "https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/README.md",
+  "keywords": [
+    "angular",
+    "logging",
+    "logger"
+  ],
+  "private": false,
   "dependencies": {
     "@angular/animations": "~9.0.6",
     "@angular/common": "~9.0.6",

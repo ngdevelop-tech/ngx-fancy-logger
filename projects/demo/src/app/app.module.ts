@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxFancyLoggerModule } from 'ngx-fancy-logger';
+import { NgxFancyLoggerModule, LogLevel } from 'ngx-fancy-logger';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,11 @@ import { NgxFancyLoggerModule } from 'ngx-fancy-logger';
   ],
   imports: [
     BrowserModule,
-    NgxFancyLoggerModule
+    NgxFancyLoggerModule.forRoot({
+      levelColor: {
+        [LogLevel.ERROR]: 'brown'
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
