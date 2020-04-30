@@ -60,7 +60,7 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
     this.log(LogLevel.ERROR, 'error', args);
   }
 
-  private log(level: LogLevel, method: string, ...args: any[] ){
+  private log(level: LogLevel, method: string, ...args: any[] ) {
     if (level < this.config.logLevel) {
       return;
     }
