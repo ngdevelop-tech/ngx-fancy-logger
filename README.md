@@ -21,7 +21,7 @@ ngx-fancy-logger is a console logger for angular applications. It provides vario
 
 ## Sample Usage Screenshots
 
-### Header and Different Log Levels Sample Logs
+### Header and Different Log Level Sample Logs
 
 ![Header and Different Log Levels Sample Logs](./sample-images/logLevels_header.png "Header and Different Log Levels Sample Logs")
 

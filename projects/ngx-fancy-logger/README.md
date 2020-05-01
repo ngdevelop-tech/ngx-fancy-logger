@@ -109,12 +109,12 @@ Each method supports any no. of parameters, the way you do in `console.log()`.
 
 ## Sample Usage Screenshots
 
-### Header and Different Log Levels Sample Logs
+### Header and Different Log Level Sample Logs
 
-![Header and Different Log Levels Sample Logs](https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/sample-images/logLevels_header.png "Header and Different Log Levels Sample Logs")
+![Header and Different Log Level Sample Logs](https://raw.githubusercontent.com/ngdevelop-tech/ngx-fancy-logger/master/sample-images/logLevels_header.png "Header and Different Log Level Sample Logs")
 
 ### Debug RxJS Observable Stream using `debugOperator()` operator function 
-![Debug RxJS Observable Stream using debugOperator() operator function ](https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/sample-images/debugOperator.png "Debug RxJS Observable Stream using debugOperator() operator function")
+![Debug RxJS Observable Stream using debugOperator() operator function ](https://raw.githubusercontent.com/ngdevelop-tech/ngx-fancy-logger/master/sample-images/debugOperator.png "Debug RxJS Observable Stream using debugOperator() operator function")
 
 ## Configuration
 
@@ -123,7 +123,7 @@ Configuration is of type `LoggerConfig`. as you can see in above example. You ca
 Config Type | Default                            | Description 
 ------------|------------------------------------|------------
 showTime    | `true`                             | Show/hide time in logs. 
-showEmoji   | `true`                             | Show/hide emogi in logs.
+showEmoji   | `true`                             | Show/hide emoji in logs.
 showLabel   | `true`                             | Show/hide log label (Usecase : can be removed when you want to only show emoji)
 disableLogs | `false`                            | if it is `true`, all logs are disabled, (Usecase : can be used in production to disable logs)
 logLevel    | `LogLevel.INFO`                    | `logLevel` will allow you to show only logs of that level and above.(Usecase : can be used for environment specific log levels)
