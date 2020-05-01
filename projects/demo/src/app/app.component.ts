@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NgxFancyLoggerService } from 'ngx-fancy-logger';
+import { NgxFancyLoggerService, LogLevel } from 'ngx-fancy-logger';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,13 @@ export class AppComponent {
   title = 'demo';
 
   constructor(private logger: NgxFancyLoggerService) {
-    logger.header('This is a Ngx Fancy Logger Demo', {color: 'red', fontSize: 30});
+    logger.header('This is a Ngx Fancy Logger Demo', { color: 'red', fontSize: 30 });
     logger.info('This is a INFO log', 123, { a: 20, b: 30 });
     logger.debug('This is a DEBUG Log', { a: 20, b: 30 });
     logger.warning('This is a WARNING Log', { a: 20, b: 30 });
     logger.error('This is an ERROR Log', { a: 20, b: 30 });
+
+    const source$ = of(Math.random(), Math.random(), Math.random());
+    source$.pipe(logger.debugOperator()).subscribe();
   }
 }

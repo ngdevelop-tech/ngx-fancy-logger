@@ -1,5 +1,5 @@
 import { Injectable, Optional } from '@angular/core';
-
+import { tap } from 'rxjs/operators';
 export enum LogLevel {
   INFO,
   DEBUG,
@@ -85,7 +85,13 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
                                             border-radius: 2px`
 
   /** Common Log Method */
-  private log(level: LogLevel, method: string, ...args: any[]) {
+  private log(level: LogLevel, ...args: any[]) {
+    let method = 'log';
+    switch (level) {
+      case LogLevel.WARNING: method = 'warn'; break;
+      case LogLevel.ERROR: method = 'error'; break;
+    }
+
     if (this.config.disableLogs || (level < this.config.logLevel)) {
       return;
     }
@@ -106,22 +112,22 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
 
   /** Display INFO level log */
   info(...args: any[]): void {
-    this.log(LogLevel.INFO, 'log', ...args);
+    this.log(LogLevel.INFO, ...args);
   }
 
   /** Display DEBUG level log */
   debug(...args: any[]): void {
-    this.log(LogLevel.DEBUG, 'log', ...args);
+    this.log(LogLevel.DEBUG, ...args);
   }
 
   /** Display WARNING Level log */
   warning(...args: any[]): void {
-    this.log(LogLevel.WARNING, 'warn', ...args);
+    this.log(LogLevel.WARNING, ...args);
   }
 
   /** Display ERROR level log */
   error(...args: any[]): void {
-    this.log(LogLevel.ERROR, 'error', ...args);
+    this.log(LogLevel.ERROR, ...args);
   }
 
   /** Display Header on Console, You can configure color and fontSize of header */
@@ -129,4 +135,10 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
     const styles = `font-size: ${config.fontSize || 20}px; color:${config.color || 'steelblue'};   text-shadow: #ddd 2px 2px 2px`;
     console.log(`%c${title}`, styles);
   }
+
+  /** RxJS Debug Operator to generate Log */
+  debugOperator = (message?: string, logLevel = LogLevel.DEBUG) => tap(data => {
+    this.log(logLevel, message || '', data);
+  })
+
 }
