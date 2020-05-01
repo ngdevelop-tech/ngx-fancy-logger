@@ -2,16 +2,20 @@
 
 **ngx-fancy-logger** is a console logger for angular applications. It provides various features like log levels, labels, time etc. 
 
-## Features
+## Key Features
 
-- Log Levels (INFO=0, DEBUG=1, WARNING=2, ERROR=3 ).
-- Log Levels are displyed in Label form with assigned color style.
+- Different Log Levels (INFO=0, DEBUG=1, WARNING=2, ERROR=3).
+- Log Levels are displayed in Label form with assigned color style or default colors.
 - Show/Hide Time
-- Can configure each setting with `LoggerConfig` in `forRoot` (which allows us to configure `environment` specific configuration).
-- Can configure Log Level in config. that will only show log of that level and above.
-    eg. if you set logLevel to `WARNING`, it will only show logs for `WARNING` and `ERROR`. 
-- Can configure Log Level Colors. 
-- All default console features.
+- Show/Hide Emogi for each Log Level
+- Show Header on console (`color` and `fontSize` configurable)
+- Debug RxJS Observable Stream using `debugOperator()` operator function  
+- Can configure each setting with `LoggerConfig` in `forRoot` (which allows us to configure `environment` specific configuration) or using `updateConfig()` method.
+- Reset configuration using `resetConfig()` method
+- Environment Specific Log Level Restriction.
+    eg. if you set `logLevel` to `WARNING`, it will only show logs for `WARNING` and `ERROR`. 
+- Can configure Log Level Colors and Emojis.
+- Can Disable all logs
 
 ## Installation
 
@@ -71,10 +75,19 @@ export class AppComponent {
   title = 'demo';
 
   constructor(private logger: NgxFancyLoggerService) {
+    logger.header('This is a Ngx Fancy Logger Demo', { color: 'red', fontSize: 30 });
     logger.info('This is a INFO log', 123, { a: 20, b: 30 });
     logger.debug('This is a DEBUG Log', { a: 20, b: 30 });
     logger.warning('This is a WARNING Log', { a: 20, b: 30 });
     logger.error('This is an ERROR Log', { a: 20, b: 30 });
+
+    logger.header('Observable Log Message using debugOperator() ');
+    const source$ = of(Math.random(), { test: 'data' }, 123, 'This  is source observable data');
+    source$.pipe(
+      logger.debugOperator('Source Response : ', LogLevel.INFO),
+      map(data => ({ key: Math.random(), response: data}) ),
+      logger.debugOperator('Mapped Response : ')
+    ).subscribe();
   }
 }
 
@@ -83,22 +96,40 @@ export class AppComponent {
 ### Methods :
 Name            | Description
 ----------------|-------------
-info            | show the INFO logs, Priority in LogLevel = 0, `LogLevel.INFO`
-debug           | show the DEBUG logs, Priority in LogLevel = 1, `LogLevel.DEBUG`
-warning         | show the WARNING logs, Priority in LogLevel = 2, `LogLevel.WARNING`
-error           | show the ERROR logs, Priority in LogLevel = 3, `LogLevel.ERROR`
+info            | Show the INFO logs, Priority in LogLevel = 0, `LogLevel.INFO`
+debug           | Show the DEBUG logs, Priority in LogLevel = 1, `LogLevel.DEBUG`
+warning         | Show the WARNING logs, Priority in LogLevel = 2, `LogLevel.WARNING`
+error           | Show the ERROR logs, Priority in LogLevel = 3, `LogLevel.ERROR`
+updateConfig    | Override default configuration / configuration done with `forRoot()`
+resetConfig     | Reset to default configuration 
+debugOperator   | It is an RxJS custom operator to debug Observable Streams.
 
-Each method supports any no. of parameters, the way you do in `console.log()`. 
+Each method supports any no. of parameters, the way you do in `console.log()`.
+
+
+## Sample Usage Screenshots
+
+### Header and Different Log Levels Sample Logs
+
+![Header and Different Log Levels Sample Logs](https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/sample-images/logLevels_header.png "Header and Different Log Levels Sample Logs")
+
+### Debug RxJS Observable Stream using `debugOperator()` operator function 
+![Debug RxJS Observable Stream using debugOperator() operator function ](https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/sample-images/debugOperator.png "Debug RxJS Observable Stream using debugOperator() operator function")
 
 ## Configuration
 
 Configuration is of type `LoggerConfig`. as you can see in above example. You can do following configurations.
 
-Config Type | Default                          | Description 
-------------|----------------------------------|------------
-showTime    | true                             | You can show and hide time in logs. 
-logLevel    | LogLevel.INFO                    | `logLevel` will allow you to show only logs of that level and above.
-levelColor | { <br> [LogLevel.INFO] : 'steelblue', <br>[LogLevel.DEBUG] : 'black',<br> [LogLevel.WARNING] : 'orange', <br>[LogLevel.ERROR]: 'red' <br>} | You can set LogLevel to INFO, DEBUG, WARNING and ERROR. You can override default levelColor.here `color` string can be any standard color specified in [W3 Colors](https://www.w3.org/wiki/CSS/Properties/color/keywords). or hex code.
+Config Type | Default                            | Description 
+------------|------------------------------------|------------
+showTime    | `true`                             | Show/hide time in logs. 
+showEmoji   | `true`                             | Show/hide emogi in logs.
+showLabel   | `true`                             | Show/hide log label (Usecase : can be removed when you want to only show emoji)
+disableLogs | `false`                            | if it is `true`, all logs are disabled, (Usecase : can be used in production to disable logs)
+logLevel    | `LogLevel.INFO`                    | `logLevel` will allow you to show only logs of that level and above.(Usecase : can be used for environment specific log levels)
+levelColor | { <br> [LogLevel.INFO] : 'steelblue', <br>[LogLevel.DEBUG] : 'black',<br> [LogLevel.WARNING] : 'orange', <br>[LogLevel.ERROR]: 'red' <br>} | Override default log level color. here `color` string can be any standard color specified in [W3 Colors](https://www.w3.org/wiki/CSS/Properties/color/keywords). or hex code.
+levelEmoji | { <br> [LogLevel.INFO] : '🐬', <br>[LogLevel.DEBUG] : '👨‍💻',<br> [LogLevel.WARNING] : '⚡', <br>[LogLevel.ERROR]: '😨' <br>} | Override default emoji. here `emoji` string can be any standard emoji specified in [unicode.org emoji list](https://unicode.org/emoji/charts/full-emoji-list.html).
+
 
 ## Demo 
 This repository includes `demo` project. clone the repository and execute `npm run start` to start demo app.
@@ -107,4 +138,4 @@ This repository includes `demo` project. clone the repository and execute `npm r
 All are welcome to contribute to `NgxFancyLogger`. Contribute with some code, file a bug or improve the documentation.
 
 ## Mark a Star ⭐
-If you feel this library useful, **mark a star** which increases the confidence to add new features in this library.
+If you feel this library useful, **mark a star** which increases our confidence to add new features in this library.

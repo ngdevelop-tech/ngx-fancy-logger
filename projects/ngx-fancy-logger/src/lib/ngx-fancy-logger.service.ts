@@ -23,7 +23,7 @@ export class LoggerConfig {
   levelColor?: {
     [logLevel: number]: string,
   } = {};
-  levelEmogi?: {
+  levelEmoji?: {
     [logLevel: number]: string
   } = {};
 }
@@ -43,7 +43,7 @@ const DEFAULT_LEVEL_COLORS = {
 const DEFAULT_EMOJIS = {
   [LogLevel.INFO]: '🐬',
   [LogLevel.DEBUG]: '👨‍💻',
-  [LogLevel.WARNING]: '👨‍🚀',
+  [LogLevel.WARNING]: '⚡',
   [LogLevel.ERROR]: '😨'
 };
 
@@ -65,7 +65,7 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
     }
     for (const key in LogLevel) {
       if (!isNaN(Number(key))) {
-        let prefix = this.config.showEmoji ? this.config.levelEmogi[key] || DEFAULT_EMOJIS[key] : '';
+        let prefix = this.config.showEmoji ? this.config.levelEmoji[key] || DEFAULT_EMOJIS[key] : '';
         if (this.config.showLabel) {
           prefix += LogLevel[key];
         }
