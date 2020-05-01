@@ -44,19 +44,20 @@ const DEFAULT_EMOJIS = {
 
 @Injectable()
 export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
-  config: LoggerConfig;
   DEFAULT_CONFIG = new LoggerConfig();
+  config: LoggerConfig;
 
   levelPrefix = {};
 
   constructor(@Optional() private loggerConfig: LoggerConfig) {
-    this.config = { ...this.DEFAULT_CONFIG, ...loggerConfig };
-    if (!this.config.disableLogs) {
-      this.setPrefix();
-    }
+    this.config = this.DEFAULT_CONFIG;
+    this.updateConfig(loggerConfig);
   }
 
   private setPrefix() {
+    if (this.config.disableLogs) {
+      return;
+    }
     for (const key in LogLevel) {
       if (!isNaN(Number(key))) {
         let prefix = this.config.showEmoji ? this.config.levelEmogi[key] || DEFAULT_EMOJIS[key] : '';
@@ -78,6 +79,26 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
                                             padding: 0px 2px;
                                             border-radius: 2px`
 
+  /** Common Log Method */
+  private log(level: LogLevel, method: string, ...args: any[]) {
+    if (this.config.disableLogs || (level < this.config.logLevel)) {
+      return;
+    }
+    console[method](`%c${this.levelPrefix[level]}${this.showTime()}`, this.getStyles(level), ...args);
+  }
+
+  /** Update configuration, it will override configuration done through forRoot or Default Config */
+  updateConfig(loggerConfig: LoggerConfig | null | undefined) {
+    this.config = { ...this.config, ...loggerConfig };
+    this.setPrefix();
+  }
+
+  /** Reset Configuration to Default Configuration */
+  resetConfig() {
+    this.config = this.DEFAULT_CONFIG;
+    this.setPrefix();
+  }
+
   info(...args: any[]): void {
     this.log(LogLevel.INFO, 'log', args);
   }
@@ -89,12 +110,5 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
   }
   error(...args: any[]): void {
     this.log(LogLevel.ERROR, 'error', args);
-  }
-
-  private log(level: LogLevel, method: string, ...args: any[]) {
-    if (this.config.disableLogs || (level < this.config.logLevel)) {
-      return;
-    }
-    console[method](`%c${this.levelPrefix[level]}${this.showTime()}`, this.getStyles(level), ...args);
   }
 }
