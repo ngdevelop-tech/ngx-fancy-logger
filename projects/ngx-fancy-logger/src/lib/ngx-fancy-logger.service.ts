@@ -1,5 +1,4 @@
 import { Injectable, Optional } from '@angular/core';
-import { isNumber } from 'util';
 
 export enum LogLevel {
   INFO,
@@ -20,6 +19,7 @@ export class LoggerConfig {
   logLevel ?= LogLevel.INFO;
   showEmoji ?= true;
   showLabel ?= true;
+  disableLogs ?= false;
   levelColor?: {
     [logLevel: number]: string,
   } = {};
@@ -51,7 +51,9 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
 
   constructor(@Optional() private loggerConfig: LoggerConfig) {
     this.config = { ...this.DEFAULT_CONFIG, ...loggerConfig };
-    this.setPrefix();
+    if (!this.config.disableLogs) {
+      this.setPrefix();
+    }
   }
 
   private setPrefix() {
@@ -90,7 +92,7 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
   }
 
   private log(level: LogLevel, method: string, ...args: any[]) {
-    if (level < this.config.logLevel) {
+    if (this.config.disableLogs || (level < this.config.logLevel)) {
       return;
     }
     console[method](`%c${this.levelPrefix[level]}${this.showTime()}`, this.getStyles(level), ...args);
