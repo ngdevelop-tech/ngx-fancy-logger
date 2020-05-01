@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'demo';
 
   constructor(private logger: NgxFancyLoggerService) {
+    logger.header('This is a Ngx Fancy Logger Demo', {color: 'red', fontSize: 30});
     logger.info('This is a INFO log', 123, { a: 20, b: 30 });
     logger.debug('This is a DEBUG Log', { a: 20, b: 30 });
     logger.warning('This is a WARNING Log', { a: 20, b: 30 });

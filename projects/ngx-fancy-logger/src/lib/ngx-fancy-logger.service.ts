@@ -28,6 +28,11 @@ export class LoggerConfig {
   } = {};
 }
 
+export interface HeaderConfig {
+    color ?: string;
+    fontSize ?: number;
+}
+
 const DEFAULT_LEVEL_COLORS = {
   [LogLevel.INFO]: 'steelblue',
   [LogLevel.DEBUG]: 'black',
@@ -44,10 +49,10 @@ const DEFAULT_EMOJIS = {
 
 @Injectable()
 export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
-  DEFAULT_CONFIG = new LoggerConfig();
-  config: LoggerConfig;
+  private DEFAULT_CONFIG = new LoggerConfig();
+  private config: LoggerConfig;
 
-  levelPrefix = {};
+  private levelPrefix = {};
 
   constructor(@Optional() private loggerConfig: LoggerConfig) {
     this.config = this.DEFAULT_CONFIG;
@@ -93,22 +98,35 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
     this.setPrefix();
   }
 
-  /** Reset Configuration to Default Configuration */
+  /** Reset to Default Configuration */
   resetConfig() {
     this.config = this.DEFAULT_CONFIG;
     this.setPrefix();
   }
 
+  /** Display INFO level log */
   info(...args: any[]): void {
-    this.log(LogLevel.INFO, 'log', args);
+    this.log(LogLevel.INFO, 'log', ...args);
   }
+
+  /** Display DEBUG level log */
   debug(...args: any[]): void {
-    this.log(LogLevel.DEBUG, 'log', args);
+    this.log(LogLevel.DEBUG, 'log', ...args);
   }
+
+  /** Display WARNING Level log */
   warning(...args: any[]): void {
-    this.log(LogLevel.WARNING, 'warn', args);
+    this.log(LogLevel.WARNING, 'warn', ...args);
   }
+
+  /** Display ERROR level log */
   error(...args: any[]): void {
-    this.log(LogLevel.ERROR, 'error', args);
+    this.log(LogLevel.ERROR, 'error', ...args);
+  }
+
+  /** Display Header on Console, You can configure color and fontSize of header */
+  header(title: string, config: HeaderConfig = {}) {
+    const styles = `font-size: ${config.fontSize || 20}px; color:${config.color || 'steelblue'};   text-shadow: #ddd 2px 2px 2px`;
+    console.log(`%c${title}`, styles);
   }
 }
