@@ -1,0 +1,34 @@
+.configChecks{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.levelColor th, .levelColor td {
+    padding: 2px !important;
+}
+
+.levelColor td input, .levelColor td input{
+    height: 25px;
+}
+
+.row{
+    margin-bottom: 5px;
+}
+.btn{
+    border-radius: 0px;
+}
+
+.card{
+    border-radius: 0px;
+    margin: 5px;
+}
+
+.form-control{
+    border-radius: 0px;
+}
+
+.logLevelSelect{
+    height: 25px;
+    padding-top :0px;
+    padding-bottom :0px;
+}

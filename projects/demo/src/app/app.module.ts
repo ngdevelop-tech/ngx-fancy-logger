@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NgxFancyLoggerModule, LogLevel } from 'ngx-fancy-logger';
+import { ExampleComponent } from './example/example.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExampleComponent
   ],
   imports: [
     BrowserModule,
