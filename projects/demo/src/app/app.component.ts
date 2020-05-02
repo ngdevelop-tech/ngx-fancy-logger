@@ -12,18 +12,6 @@ export class AppComponent {
 
   constructor(private logger: NgxFancyLoggerService) {
     logger.header('This is a Ngx Fancy Logger Demo', { color: 'red', fontSize: 30 });
-    logger.info('This is a INFO log', 123, { a: 20, b: 30 });
-    logger.debug('This is a DEBUG Log', { a: 20, b: 30 });
-    logger.warning('This is a WARNING Log', { a: 20, b: 30 });
-    logger.error('This is an ERROR Log', { a: 20, b: 30 });
-
-    logger.header('Observable Log Message using debugOperator() ');
-    const source$ = of(Math.random(), { test: 'data' }, 123, 'This  is source observable data');
-    source$.pipe(
-      logger.debugOperator('Source Response : ', LogLevel.INFO),
-      map(data => ({ key: Math.random(), response: data}) ),
-      logger.debugOperator('Mapped Response : ')
-    ).subscribe();
   }
 
 }

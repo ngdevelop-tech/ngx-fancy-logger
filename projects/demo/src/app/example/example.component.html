@@ -2,25 +2,26 @@
     <div class="col-md-4 p-1">
         <div class="card bg-light">
             <div class="card-body">
+                <form #configForm="ngForm" (change)="updateConfig()">
                 <h4 class="card-title">Configuration</h4>
                 <div class="configChecks">
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                            <input type="checkbox" class="form-check-input" name="showTime" [(ngModel)]="config.showTime">
                             Show Time
                         </label>
                     </div>
 
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                            <input type="checkbox" class="form-check-input" name="showEmoji" [(ngModel)]="config.showEmoji">
                             Show Emoji
                         </label>
                     </div>
 
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                            <input type="checkbox" class="form-check-input" name="showLabel" [(ngModel)]="config.showLabel">
                             Show Label
                         </label>
                     </div>
@@ -28,7 +29,7 @@
 
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                            <input type="checkbox" class="form-check-input" name="disableLogs"[(ngModel)]="config.disableLogs">
                             Disable Logs
                         </label>
                     </div>
@@ -39,7 +40,7 @@
                         <tr>
                             <td scope="row"><b>Log Level</b></td>
                             <td>
-                                  <select class="logLevelSelect form-control" name="" id="">
+                                  <select class="logLevelSelect form-control" name="logLevel" [(ngModel)]="config.logLevel">
                                     <option *ngFor="let level of logLevels" [value]="level">{{logLevelEnum[level]}}</option>
                                   </select>
                             </td>
@@ -53,9 +54,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let l of levels">
+                        <tr *ngFor="let l of levels; let i = index">
                             <td scope="row">{{l}}</td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" name="levelColor{{i}}" [(ngModel)]="config.levelColor[i]"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -66,13 +67,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let l of levels">
+                        <tr *ngFor="let l of levels; let i = index">
                             <td scope="row">{{l}}</td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" name="levelEmoji{{i}}" [(ngModel)]="config.levelEmoji[i]"></td>
                         </tr>
                     </tbody>
                 </table>
-
+            </form>
             </div>
         </div>
 
@@ -82,52 +83,63 @@
         <div class="card bg-light">
             <div class="card-body">
                 <h4 class="card-title">Header Style Log</h4>
+                <form #headerForm="ngForm">
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="text" placeholder="Enter Header Text" class="form-control p2">
+                        <input type="text" placeholder="Enter Header Text" name="message" class="form-control p2" ngModel>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-between">
-                        <input type="text" class="form-control" placeholder="Color">
-                        <input type="text" class="ml-1 form-control" placeholder="Font Size">
+                        <input type="text" class="form-control" placeholder="Color" name="color" ngModel>
+                        <input type="number" class="ml-1 form-control" placeholder="Font Size" name="fontSize" ngModel>
                     </div>
                     <div class="col-md-6 text-right">
-                        <button type="button" class="btn btn-info mr-0">Show Header Log</button>
+                        <button type="button" (click)="showHeader(headerForm.value)" class="btn btn-info mr-0">Show Header Log</button>
                     </div>
                 </div>
-
+                </form>
             </div>
         </div>
         <div class="card bg-light">
             <div class="card-body">
                 <h4 class="card-title">Log Statement</h4>
+                <form #logForm="ngForm">
                 <div class="row">
                     <div class="col-md-12">
                         <textarea type="text" row="3" placeholder="Enter Text or JSON Object "
-                            class="form-control p2"></textarea>
+                            class="form-control p2" name="data" ngModel></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-check">
                             <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue"
-                                    checked>
+                                <input type="checkbox" class="form-check-input" name="isJSON" ngModel>
                                 JSON Object
                             </label>
                         </div>
                     </div>
 
                     <div class="col-md-8 text-right">
-                        <button type="button" class="btn btn-info mr-1">INFO</button>
-                        <button type="button" class="btn btn-dark mr-1">DEBUG</button>
-                        <button type="button" class="btn btn-warning mr-1">WARNING</button>
-                        <button type="button" class="btn btn-danger">ERROR</button>
+                        <button type="button" class="btn btn-info mr-1" (click)="showLog(logLevelEnum.INFO, logForm.value)">INFO</button>
+                        <button type="button" class="btn btn-dark mr-1" (click)="showLog(logLevelEnum.DEBUG, logForm.value)">DEBUG</button>
+                        <button type="button" class="btn btn-warning mr-1" (click)="showLog(logLevelEnum.WARNING, logForm.value)">WARNING</button>
+                        <button type="button" class="btn btn-danger" (click)="showLog(logLevelEnum.ERROR, logForm.value)">ERROR</button>
                     </div>
                 </div>
-
+            </form>
             </div>
         </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Note : </h4>
+                <ul class="list-inline">
+                    <li class="list-inline-item">Level & Header <b>color</b> string can be any standard color specified in <a href="https://www.w3.org/wiki/CSS/Properties/color/keywords" target="_blank"> W3 Colors</a>. or hex code.</li>
+                    <li class="list-inline-item">Level <b>emoji</b> can be any standard emoji specified in <a href="https://unicode.org/emoji/charts/full-emoji-list.html" target="_blank"> Unicode.org Emoji List</a>. </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 </div>
