@@ -1,13 +1,30 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary d-flex justify-content-between">
-    <div>
-        <a class="navbar-brand" href="#">NGX-FANCY-LOGGER</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">NGX-FANCY-LOGGER</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLink="/home" routerLinkActive="active">
+          <a class="nav-link" >Home</a>
+        </li>
+        <li class="nav-item" routerLink="/demo" routerLinkActive="active">
+          <a class="nav-link" >Play with Demo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" target="_blank" href="https://www.npmjs.com/package/ngx-fancy-logger">Documentation</a>
+        </li>
+      </ul>
+      <div>
+        <a href="http://https://github.com/ngdevelop-tech/ngx-fancy-logger" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a> 
+      </div>
     </div>
-    <div>
-        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-    </div>
-</nav>
-
+  </nav>
 <div class="container-fluid">
-    <h1 class="text-center text-monospace">Make <u>debugging easier</u> with <u>more readable</u> and <u>configurable</u> fancy logs</h1>
-    <app-example></app-example>
+    <router-outlet></router-outlet>
 </div>
+
+<footer class="text-center bg-light pt-2">
+  Made with ❤️ by <a href="http://www.ngdevelop.tech" target="_blank" >NgDevelop</a>. If you like this library, mark ⭐ in <a href="http://https//github.com/ngdevelop-tech/ngx-fancy-logger" target="_blank"> GitHub </a> repository. 
+</footer>

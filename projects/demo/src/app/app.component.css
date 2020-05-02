@@ -1,3 +1,14 @@
 .navbar .fa{
     color:white;
 }
+
+footer {
+    position: fixed;
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+}
+
+.container-fluid{
+    margin-bottom: 40px;
+}

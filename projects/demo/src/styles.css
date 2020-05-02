@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+.code-block{
+    background-color: #031531;
+    padding: 5px;
+    border-radius: 5px;
+}
+code{
+    background-color: #031531;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.code-block pre, code{
+    color: white;
+}
+
+*::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-thumb
+{
+    background-color: #777;
+}
+
+.bg-primary{
+    background-color: #093f7a!important
+}
