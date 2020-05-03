@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/ngdevelop-tech/ngx-fancy-logger/issues"
   },
-  "homepage": "https://ngx-fancy-logger.netlify.app/home",
+  "homepage": "https://ngx-fancy-logger.netlify.app/",
   "keywords": [
     "angular",
     "logging",

@@ -60,7 +60,7 @@
             "tsConfig": "projects/demo/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/demo/src/favicon.ico",
+              "projects/demo/src/favicon.png",
               "projects/demo/src/assets"
             ],
             "styles": [
