@@ -1,6 +1,6 @@
 {
   "name": "ngx-fancy-logger-repo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Console Logger for Angular applications",
   "scripts": {
     "ng": "ng",
@@ -25,7 +25,7 @@
     "@angular/platform-browser": "~9.0.6",
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
-    "ngx-fancy-logger": "0.0.5",
+    "ngx-fancy-logger": "^1.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
