@@ -25,7 +25,7 @@
     "@angular/platform-browser": "~9.0.6",
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
-    "ngx-fancy-logger": "0.0.4",
+    "ngx-fancy-logger": "0.0.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

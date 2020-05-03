@@ -30,7 +30,7 @@ ngx-fancy-logger is a console logger for angular applications. It provides vario
 
 
 ## Demo 
-[Ngx-Fancy-Logger Demo with All available configuration options](https://ngx-fancy-logger.netlify.app/demo)
+[Ngx-Fancy-Logger Demo with All available configuration options](https://ngx-fancy-logger.netlify.app/#/demo)
 
 ## Contribute
 All are welcome to contribute to `NgxFancyLogger`. Contribute with some code, file a bug or improve the documentation.

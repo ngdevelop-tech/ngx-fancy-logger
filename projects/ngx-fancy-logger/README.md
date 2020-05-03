@@ -4,7 +4,7 @@ NGX-FANCY-LOGGER is a console logger for angular applications. It provides vario
 
 It supports Angular v6 and above.
 
-# [NgxFancyLogger HomePage](https://ngx-fancy-logger.netlify.app/) | [NgxFancyLogger Demo](https://ngx-fancy-logger.netlify.app/demo/) 
+# [NgxFancyLogger HomePage](https://ngx-fancy-logger.netlify.app/) | [NgxFancyLogger Demo](https://ngx-fancy-logger.netlify.app/#/demo) 
 
 
 ## Key Features
@@ -140,7 +140,7 @@ levelEmoji | { <br> [LogLevel.INFO] : '🐬', <br>[LogLevel.DEBUG] : '👨‍�
 `@angular/core >= 6.0.0`, `@angular/common >= 6.0.0`, `rxjs >= 6.0.0`
 
 ## Demo 
-[Ngx-Fancy-Logger Demo with All available configuration options](https://ngx-fancy-logger.netlify.app/demo)
+[Ngx-Fancy-Logger Demo with All available configuration options](https://ngx-fancy-logger.netlify.app/#/demo)
 
 ## Contribute
 All are welcome to contribute to `NgxFancyLogger`. Contribute with some code, file a bug or improve the documentation.

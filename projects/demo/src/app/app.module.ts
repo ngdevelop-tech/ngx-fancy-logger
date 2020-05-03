@@ -12,7 +12,8 @@ import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'demo', component: ExampleComponent}
+  {path: 'demo', component: ExampleComponent},
+  {path: '**', redirectTo : 'home'},
 ];
 
 @NgModule({
@@ -25,10 +26,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    NgxFancyLoggerModule
+    RouterModule.forRoot(routes, {useHash: true}),
+    NgxFancyLoggerModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
