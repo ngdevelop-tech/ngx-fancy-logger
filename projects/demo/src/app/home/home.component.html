@@ -1,11 +1,14 @@
 <div class="text-center">
-    <h1 class="text-info">NGX-FANCY-LOGGER</h1>
+    <h1 class="title text-info">NGX-FANCY-LOGGER</h1>
+    <h4 class="text-secondary"> Console Logger for Angular(v6 and above) </h4>
     <h3 class="text-monospace">Make <u>debugging easier</u> with <u>more readable</u> and
         <u>configurable</u> fancy logs</h3>
     <div class="badges">
         <img alt="npm" src="https://img.shields.io/npm/v/ngx-fancy-logger">
         <img alt="npm" src="https://img.shields.io/npm/dw/ngx-fancy-logger">
         <img alt="GitHub stars" src="https://img.shields.io/github/stars/ngdevelop-tech/ngx-fancy-logger?style=social">
+        <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/ngx-fancy-logger">
+        <img alt="NPM" src="https://img.shields.io/npm/l/ngx-fancy-logger">
     </div>
 
     <div>
@@ -16,7 +19,47 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 text-center">
+    <div class="col-md-12">
+        <div class="card bg-light">
+          <div class="card-body p-1">
+            <h4 class="card-title text-center">Key Features</h4>
+            <div class="row">
+                <div class="col-md-6 p-0">
+                    <ul >
+                        <li>
+                            Log Levels Labels <span class="badge badge-pill badge-info">INFO</span>
+                            <span class="badge badge-pill badge-dark">DEBUG</span>
+                            <span class="badge badge-pill badge-warning">WARNING</span>
+                            <span class="badge badge-pill badge-danger">ERROR</span>
+                        </li>
+                        <li>Show/Hide Log Time</li>
+                        <li>Show/Hide Labels</li>
+                        <li>Show/Hide Emoji👩🏻‍💻 for each log level</li>
+                        <li>Log Level colors and emojis are configurable</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 p-0">
+                    <ul >
+                        <li>
+                            Show Header on console (color and fontSize configurable)  
+                        </li>
+                        <li>Debug RxJS Observable Stream using <code>debugOperator()</code> operator function  
+                        </li>
+                        <li> Can configure each setting.
+                        </li>
+                        <li>Environment Specific Log Level Restriction.
+                            eg. if you set <code>logLevel</code> to <code>LogLevel.WARNING</code>, it will only show logs for <code>WARNING</code> and <code>ERROR</code></li>
+                        <li>Can Disable all Logs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 text-center mb-4">
         <h4>Sample Log Screenshot</h4>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -35,7 +78,7 @@
     <div class="col-md-6 text-center">
         <h4>Installation</h4>
         <div class="card bg-light">
-            <div class="card-body text-left">
+            <div class="card-body text-left p-1">
 
                 <div class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">

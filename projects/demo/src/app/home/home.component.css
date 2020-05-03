@@ -1,3 +1,14 @@
 .badges img{
     margin: 0 5px;
 }
+
+.row{
+    margin: 10px 0;
+}
+
+@media (max-width: 576px) { 
+    .title{
+        margin-top: 10px;
+        font-size: 2rem;
+    }
+ }

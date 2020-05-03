@@ -1,6 +1,8 @@
 # NgxFancyLogger Documentation
 
-**ngx-fancy-logger** is a console logger for angular applications. It provides various features like log levels, labels, time etc. 
+NGX-FANCY-LOGGER is a console logger for angular applications. It provides various features like log level labels, log level emoji, time and so on etc.
+
+It supports Angular v6 and above.
 
 ## Key Features
 

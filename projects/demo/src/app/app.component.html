@@ -13,11 +13,12 @@
           <a class="nav-link" >Play with Demo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" target="_blank" href="https://www.npmjs.com/package/ngx-fancy-logger">Documentation</a>
+          <a class="nav-link" target="_blank" [href]="EXTERNAL_URL.npm">Documentation</a>
         </li>
       </ul>
       <div>
-        <a href="http://https://github.com/ngdevelop-tech/ngx-fancy-logger" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a> 
+        <a class="icon" [href]="EXTERNAL_URL.npm" target="_blank"><i class="fab fa-npm fa-2x"></i></a> 
+        <a class="icon" [href]="EXTERNAL_URL.git" target="_blank"><i class="fab fa-github fa-2x"></i></a> 
       </div>
     </div>
   </nav>
@@ -26,5 +27,6 @@
 </div>
 
 <footer class="text-center bg-light pt-2">
-  Made with ❤️ by <a href="http://www.ngdevelop.tech" target="_blank" >NgDevelop</a>. If you like this library, mark ⭐ in <a href="http://https//github.com/ngdevelop-tech/ngx-fancy-logger" target="_blank"> GitHub </a> repository. 
+  Made with ❤️ by <a [href]="EXTERNAL_URL.ngdevelop" target="_blank" >NgDevelop</a>. 
+  If you like this library, mark ⭐ in <a [href]="EXTERNAL_URL.git" target="_blank"> GitHub </a> repository. 
 </footer>

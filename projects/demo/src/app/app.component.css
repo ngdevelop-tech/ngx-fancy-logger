@@ -2,6 +2,20 @@
     color:white;
 }
 
+.nav-item{
+    cursor: pointer;
+}
+
+.icon i{
+    color: rgba(255,255,255,.5);
+    padding: 0px 5px;
+}
+
+.icon i:hover{
+    color:rgba(255,255,255,.8);
+    padding: 0px 5px;
+}
+
 footer {
     position: fixed;
     height: 40px;
