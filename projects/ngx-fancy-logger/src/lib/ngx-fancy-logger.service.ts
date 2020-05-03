@@ -47,7 +47,9 @@ const DEFAULT_EMOJIS = {
   [LogLevel.ERROR]: '😨'
 };
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
   private DEFAULT_CONFIG = new LoggerConfig();
   private config: LoggerConfig;
