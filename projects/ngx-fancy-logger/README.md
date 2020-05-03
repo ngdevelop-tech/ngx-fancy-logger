@@ -4,6 +4,9 @@ NGX-FANCY-LOGGER is a console logger for angular applications. It provides vario
 
 It supports Angular v6 and above.
 
+# [NgxFancyLogger HomePage](https://ngx-fancy-logger.netlify.app/) | [NgxFancyLogger Demo](https://ngx-fancy-logger.netlify.app/demo/) 
+
+
 ## Key Features
 
 - Different Log Levels (INFO=0, DEBUG=1, WARNING=2, ERROR=3).
@@ -132,12 +135,15 @@ logLevel    | `LogLevel.INFO`                    | `logLevel` will allow you to 
 levelColor | { <br> [LogLevel.INFO] : 'steelblue', <br>[LogLevel.DEBUG] : 'black',<br> [LogLevel.WARNING] : 'orange', <br>[LogLevel.ERROR]: 'red' <br>} | Override default log level color. here `color` string can be any standard color specified in [W3 Colors](https://www.w3.org/wiki/CSS/Properties/color/keywords). or hex code.
 levelEmoji | { <br> [LogLevel.INFO] : '🐬', <br>[LogLevel.DEBUG] : '👨‍💻',<br> [LogLevel.WARNING] : '⚡', <br>[LogLevel.ERROR]: '😨' <br>} | Override default emoji. here `emoji` string can be any standard emoji specified in [unicode.org emoji list](https://unicode.org/emoji/charts/full-emoji-list.html).
 
+# Dependencies
+
+`@angular/core >= 6.0.0`, `@angular/common >= 6.0.0`, `rxjs >= 6.0.0`
 
 ## Demo 
-This repository includes `demo` project. clone the repository and execute `npm run start` to start demo app.
+[Ngx-Fancy-Logger Demo with All available configuration options](https://ngx-fancy-logger.netlify.app/demo)
 
 ## Contribute
 All are welcome to contribute to `NgxFancyLogger`. Contribute with some code, file a bug or improve the documentation.
 
 ## Mark a Star ⭐
-If you feel this library useful, **mark a star** which increases our confidence to add new features in this library.
+If you like this library, **mark a star** ⭐ on [ngx-fancy-logger GitHub](https://github.com/ngdevelop-tech/ngx-fancy-logger) repository, this will increase our confidence to add new features in this library.

@@ -1,6 +1,6 @@
 {
   "name": "ngx-fancy-logger",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/ngdevelop-tech/ngx-fancy-logger"
@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/ngdevelop-tech/ngx-fancy-logger/issues"
   },
-  "homepage": "https://github.com/ngdevelop-tech/ngx-fancy-logger/blob/master/README.md",
+  "homepage": "https://ngx-fancy-logger.netlify.app/home",
   "keywords": [
     "angular",
     "logging",

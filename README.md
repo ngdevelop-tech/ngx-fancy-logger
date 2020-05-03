@@ -2,7 +2,7 @@
 
 ngx-fancy-logger is a console logger for angular applications. It provides various features like different log levels, display labels, show time etc. 
 
-# [Read Detailed Documentation](./projects/ngx-fancy-logger/README.md)
+# [Read Detailed Documentation](./projects/ngx-fancy-logger/README.md) | [NgxFancyLogger HomePage / Demo](https://ngx-fancy-logger.netlify.app/) 
 
 ## Key Features
 
@@ -30,10 +30,10 @@ ngx-fancy-logger is a console logger for angular applications. It provides vario
 
 
 ## Demo 
-This repository includes `demo` project. clone the repository and execute `npm run start` to start demo app.
+[Ngx-Fancy-Logger Demo with All available configuration options](https://ngx-fancy-logger.netlify.app/demo)
 
 ## Contribute
 All are welcome to contribute to `NgxFancyLogger`. Contribute with some code, file a bug or improve the documentation.
 
 ## Mark a Star ⭐
-If you feel this library useful, **mark a star** which increases the confidence to add new features in this library.
+If you like this library, **mark a star** ⭐ on [ngx-fancy-logger GitHub](https://github.com/ngdevelop-tech/ngx-fancy-logger) repository, this will increase our confidence to add new features in this library.
