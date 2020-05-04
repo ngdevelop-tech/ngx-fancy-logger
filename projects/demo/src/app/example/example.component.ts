@@ -48,14 +48,19 @@ export class ExampleComponent implements OnInit {
   }
 
   showLog(logLevel: LogLevel, value: any) {
+    try {
+      const data = value.isJSON ? JSON.parse(value.data) : value.data;
 
-    const data = value.isJSON ? JSON.parse(value.data) : value.data;
-
-    switch (logLevel) {
-      case LogLevel.INFO: this.logger.info(data); break;
-      case LogLevel.DEBUG: this.logger.debug(data); break;
-      case LogLevel.WARNING: this.logger.warning(data); break;
-      case LogLevel.ERROR: this.logger.error(data); break;
+      switch (logLevel) {
+        case LogLevel.INFO: this.logger.info(data); break;
+        case LogLevel.DEBUG: this.logger.debug(data); break;
+        case LogLevel.WARNING: this.logger.warning(data); break;
+        case LogLevel.ERROR: this.logger.error(data); break;
+      }
+    } catch (error) {
+      if (error instanceof SyntaxError) {
+        this.logger.error('Invalid JSON Object.');
+      }
     }
   }
 
