@@ -1,5 +1,6 @@
 import { Injectable, Optional } from '@angular/core';
 import { tap } from 'rxjs/operators';
+import { MonoTypeOperatorFunction } from 'rxjs';
 export enum LogLevel {
   INFO,
   DEBUG,
@@ -139,7 +140,7 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
   }
 
   /** RxJS Debug Operator to generate Log */
-  debugOperator = (message?: string, logLevel = LogLevel.DEBUG) => tap(data => {
+  debugOperator = <T>(message?: string, logLevel = LogLevel.DEBUG): MonoTypeOperatorFunction<T> => tap(data => {
     this.log(logLevel, message || '', data);
   })
 
