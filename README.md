@@ -6,7 +6,7 @@ ngx-fancy-logger is a console logger for angular applications. It provides vario
 
 ## Key Features
 
-- Different Log Levels (INFO=0, DEBUG=1, WARNING=2, ERROR=3).
+- Different Log Levels (DEBUG=0, INFO=1, WARNING=2, ERROR=3).
 - Log Levels are displayed in Label form with assigned color style or default colors.
 - Show/Hide Time
 - Show/Hide Emoji for each Log Level

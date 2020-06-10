@@ -81,8 +81,8 @@ export class AppComponent {
 
   constructor(private logger: NgxFancyLoggerService) {
     logger.header('This is a Ngx Fancy Logger Demo', { color: 'red', fontSize: 30 });
-    logger.info('This is a INFO log', 123, { a: 20, b: 30 });
     logger.debug('This is a DEBUG Log', { a: 20, b: 30 });
+    logger.info('This is a INFO log', 123, { a: 20, b: 30 });
     logger.warning('This is a WARNING Log', { a: 20, b: 30 });
     logger.error('This is an ERROR Log', { a: 20, b: 30 });
 
@@ -101,8 +101,8 @@ export class AppComponent {
 ### Methods :
 Name            | Description
 ----------------|-------------
-info            | Show the INFO logs, Priority in LogLevel = 0, `LogLevel.INFO`
-debug           | Show the DEBUG logs, Priority in LogLevel = 1, `LogLevel.DEBUG`
+debug           | Show the DEBUG logs, Priority in LogLevel = 0, `LogLevel.DEBUG`
+info            | Show the INFO logs, Priority in LogLevel = 1, `LogLevel.INFO`
 warning         | Show the WARNING logs, Priority in LogLevel = 2, `LogLevel.WARNING`
 error           | Show the ERROR logs, Priority in LogLevel = 3, `LogLevel.ERROR`
 updateConfig    | Override default configuration / configuration done with `forRoot()`
