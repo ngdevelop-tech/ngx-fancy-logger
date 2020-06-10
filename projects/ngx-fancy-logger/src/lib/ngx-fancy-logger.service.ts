@@ -1,15 +1,15 @@
 import { Injectable, Optional } from '@angular/core';
 import { tap } from 'rxjs/operators';
 export enum LogLevel {
-  INFO,
   DEBUG,
+  INFO,
   WARNING,
   ERROR,
 }
 
 export abstract class AbstractNgxFancyLoggerService {
-  abstract info(...args: any[]): void;
   abstract debug(...args: any[]): void;
+  abstract info(...args: any[]): void;
   abstract warning(...args: any[]): void;
   abstract error(...args: any[]): void;
 }
@@ -34,15 +34,15 @@ export interface HeaderConfig {
 }
 
 const DEFAULT_LEVEL_COLORS = {
-  [LogLevel.INFO]: 'steelblue',
   [LogLevel.DEBUG]: 'black',
+  [LogLevel.INFO]: 'steelblue',
   [LogLevel.WARNING]: 'orange',
   [LogLevel.ERROR]: 'red'
 };
 
 const DEFAULT_EMOJIS = {
-  [LogLevel.INFO]: '🐬',
   [LogLevel.DEBUG]: '👨‍💻',
+  [LogLevel.INFO]: '🐬',
   [LogLevel.WARNING]: '⚡',
   [LogLevel.ERROR]: '😨'
 };
@@ -112,14 +112,14 @@ export class NgxFancyLoggerService implements AbstractNgxFancyLoggerService {
     this.setPrefix();
   }
 
-  /** Display INFO level log */
-  info(...args: any[]): void {
-    this.log(LogLevel.INFO, ...args);
-  }
-
   /** Display DEBUG level log */
   debug(...args: any[]): void {
     this.log(LogLevel.DEBUG, ...args);
+  }
+
+  /** Display INFO level log */
+  info(...args: any[]): void {
+    this.log(LogLevel.INFO, ...args);
   }
 
   /** Display WARNING Level log */

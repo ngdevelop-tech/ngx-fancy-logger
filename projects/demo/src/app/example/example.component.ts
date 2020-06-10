@@ -14,14 +14,14 @@ export class ExampleComponent implements OnInit {
     showLabel: true,
     disableLogs: false,
     levelColor: {
-      [LogLevel.INFO]: 'steelblue',
       [LogLevel.DEBUG]: 'black',
+      [LogLevel.INFO]: 'steelblue',
       [LogLevel.WARNING]: 'orange',
       [LogLevel.ERROR]: 'red'
     },
     levelEmoji: {
-      [LogLevel.INFO]: '🐬',
       [LogLevel.DEBUG]: '👨‍💻',
+      [LogLevel.INFO]: '🐬',
       [LogLevel.WARNING]: '⚡',
       [LogLevel.ERROR]: '😨'
     }
@@ -52,8 +52,8 @@ export class ExampleComponent implements OnInit {
       const data = value.isJSON ? JSON.parse(value.data) : value.data;
 
       switch (logLevel) {
-        case LogLevel.INFO: this.logger.info(data); break;
         case LogLevel.DEBUG: this.logger.debug(data); break;
+        case LogLevel.INFO: this.logger.info(data); break;
         case LogLevel.WARNING: this.logger.warning(data); break;
         case LogLevel.ERROR: this.logger.error(data); break;
       }

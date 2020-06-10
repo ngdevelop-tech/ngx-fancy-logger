@@ -27,8 +27,9 @@
                 <div class="col-md-6 p-0">
                     <ul >
                         <li>
-                            Log Levels Labels <span class="badge badge-pill badge-info">INFO</span>
+                            Log Levels Labels
                             <span class="badge badge-pill badge-dark">DEBUG</span>
+                            <span class="badge badge-pill badge-info">INFO</span>
                             <span class="badge badge-pill badge-warning">WARNING</span>
                             <span class="badge badge-pill badge-danger">ERROR</span>
                         </li>
@@ -160,8 +161,8 @@ title = 'demo';
 
 constructor(private logger: NgxFancyLoggerService) {{'{'}}
     logger.header('This is a Ngx Fancy Logger Demo', {{'{'}} color: 'red', fontSize: 30 });
-    logger.info('This is a INFO log', 123, {{'{'}} a: 20, b: 30 });
     logger.debug('This is a DEBUG Log', {{'{'}} a: 20, b: 30 });
+    logger.info('This is a INFO log', 123, {{'{'}} a: 20, b: 30 });
     logger.warning('This is a WARNING Log', {{'{'}} a: 20, b: 30 });
     logger.error('This is an ERROR Log', {{'{'}} a: 20, b: 30 });
 
