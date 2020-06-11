@@ -9,7 +9,7 @@ It supports Angular v6 and above.
 
 ## Key Features
 
-- Different Log Levels (INFO=0, DEBUG=1, WARNING=2, ERROR=3).
+- Different Log Levels (DEBUG=0, INFO=1, WARNING=2, ERROR=3).
 - Log Levels are displayed in Label form with assigned color style or default colors.
 - Show/Hide Time
 - Show/Hide Emogi for each Log Level
@@ -131,7 +131,7 @@ showTime    | `true`                             | Show/hide time in logs.
 showEmoji   | `true`                             | Show/hide emoji in logs.
 showLabel   | `true`                             | Show/hide log label (Usecase : can be removed when you want to only show emoji)
 disableLogs | `false`                            | if it is `true`, all logs are disabled, (Usecase : can be used in production to disable logs)
-logLevel    | `LogLevel.INFO`                    | `logLevel` will allow you to show only logs of that level and above.(Usecase : can be used for environment specific log levels)
+logLevel    | `LogLevel.DEBUG`                    | `logLevel` will allow you to show only logs of that level and above.(Usecase : can be used for environment specific log levels)
 levelColor | { <br> [LogLevel.INFO] : 'steelblue', <br>[LogLevel.DEBUG] : 'black',<br> [LogLevel.WARNING] : 'orange', <br>[LogLevel.ERROR]: 'red' <br>} | Override default log level color. here `color` string can be any standard color specified in [W3 Colors](https://www.w3.org/wiki/CSS/Properties/color/keywords). or hex code.
 levelEmoji | { <br> [LogLevel.INFO] : '🐬', <br>[LogLevel.DEBUG] : '👨‍💻',<br> [LogLevel.WARNING] : '⚡', <br>[LogLevel.ERROR]: '😨' <br>} | Override default emoji. here `emoji` string can be any standard emoji specified in [unicode.org emoji list](https://unicode.org/emoji/charts/full-emoji-list.html).
 

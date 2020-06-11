@@ -17,7 +17,7 @@ export abstract class AbstractNgxFancyLoggerService {
 
 export class LoggerConfig {
   showTime ?= true;
-  logLevel ?= LogLevel.INFO;
+  logLevel ?= LogLevel.DEBUG;
   showEmoji ?= true;
   showLabel ?= true;
   disableLogs ?= false;
