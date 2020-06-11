@@ -45,14 +45,18 @@ Thanks goes to these wonderful people.
 <table>
   <tr>
     <td align="center">
-    <img src="https://avatars2.githubusercontent.com/u/34959339?v=4" width="100px;" alt=""/>
-    <br />
-    <sub><b>Ankit Prajapati</b></sub>
+    <a href="https://github.com/ngdevelop-tech">
+        <img src="https://avatars2.githubusercontent.com/u/34959339?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Ankit Prajapati</b></sub>
+    </a>
     </td>
     <td align="center">
-    <img src="https://avatars2.githubusercontent.com/u/31973?v=4" width="100px;" alt=""/>
-    <br />
-    <sub><b>Jiten (Jits) Bhagat</b></sub>
+    <a href="https://github.com/jits">
+        <img src="https://avatars2.githubusercontent.com/u/31973?v=4" width="100px;" alt=""/>
+        <br />
+        <sub><b>Jiten (Jits) Bhagat</b></sub>
+    </a>
     </td>
   </tr>
 </table>
