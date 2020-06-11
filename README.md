@@ -35,5 +35,31 @@ ngx-fancy-logger is a console logger for angular applications. It provides vario
 ## Contribute
 All are welcome to contribute to `NgxFancyLogger`. Contribute with some code, file a bug or improve the documentation.
 
+## Contributors ✨✨✨
+
+Thanks goes to these wonderful people.
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center">
+    <img src="https://avatars2.githubusercontent.com/u/34959339?v=4" width="100px;" alt=""/>
+    <br />
+    <sub><b>Ankit Prajapati</b></sub>
+    </td>
+    <td align="center">
+    <img src="https://avatars2.githubusercontent.com/u/31973?v=4" width="100px;" alt=""/>
+    <br />
+    <sub><b>Jiten (Jits) Bhagat</b></sub>
+    </td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## Mark a Star ⭐
 If you like this library, **mark a star** ⭐ on [ngx-fancy-logger GitHub](https://github.com/ngdevelop-tech/ngx-fancy-logger) repository, this will increase our confidence to add new features in this library.
