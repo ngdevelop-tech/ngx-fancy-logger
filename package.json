@@ -1,6 +1,6 @@
 {
   "name": "ngx-fancy-logger-repo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Console Logger for Angular applications",
   "scripts": {
     "ng": "ng",
