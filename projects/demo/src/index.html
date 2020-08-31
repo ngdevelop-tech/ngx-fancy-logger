@@ -19,7 +19,10 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-111614491-3');
+  /** Disable automatic page view hit to fix duplicate page view count  **/
+  gtag('config', 'UA-111614491-3', {
+    send_page_view: false
+  });
 </script>
 
 </head>
